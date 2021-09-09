@@ -10,12 +10,13 @@ const SwipeController = ({ action }: IProps) => {
 	let consoleDomStart = { x: 0, y: 0 };
 	let consoleDomCurrent = { x: 0, y: 0 };
 
-	const direction = {
-		directionX: 0,
-		directionY: 0,
-		valueX: 0,
-		valueY: 0,
-	};
+	// const direction = {
+	// 	directionX: 0,
+	// 	directionY: 0,
+	// 	valueX: 0,
+	// 	valueY: 0,
+	// 	moving: false,
+	// };
 	// const swipeStartCoordinates = { x: 0, y: 0 };
 	// const swipeCurrentCoordinates = { x: 0, y: 0 };
 
@@ -26,12 +27,13 @@ const SwipeController = ({ action }: IProps) => {
 
 		const directionY = touch.screenY - consoleDomStart.y < 0 ? 'UP' : 'DOWN';
 		const directionX = touch.screenX - consoleDomStart.x < 0 ? 'LEFT' : 'RIGHT';
-		console.log('swipe', directionX);
+		// console.log('swipe', directionX);
 		action({
 			dirX: directionX,
 			dirY: directionY,
 			valueX: touch.screenX - consoleDomStart.x,
 			valueY: touch.screenY - consoleDomStart.y,
+			moving: 2,
 		});
 		// direction = {
 		// 	directionX: 0,
@@ -53,6 +55,13 @@ const SwipeController = ({ action }: IProps) => {
 	const swipeStart = (e: any) => {
 		const touch = e.targetTouches[0];
 		consoleDomStart = { x: touch.screenX, y: touch.screenY };
+		action({
+			dirX: 'NONE',
+			dirY: 'NONE',
+			valueX: touch.screenX - consoleDomStart.x,
+			valueY: touch.screenY - consoleDomStart.y,
+			moving: 1,
+		});
 		// console.log('swipeStart', consoleDomStart);
 		// if (e['targetTouches'] !== undefined) {
 		// swipeStartCoordinates.y = touch.screenY;
@@ -80,6 +89,13 @@ const SwipeController = ({ action }: IProps) => {
 		// }
 		// console.log('swipeEnd', swipeEndCoordinates);
 		// setConsoleDomEnd(swipeEndCoordinates);
+		action({
+			dirX: 'NONE',
+			dirY: 'NONE',
+			valueX: 40,
+			valueY: 40,
+			moving: 3,
+		});
 	};
 
 	//

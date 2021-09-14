@@ -8,8 +8,10 @@ function App() {
 	const [direction, setDirection] = useState<any>(0);
 	return (
 		<>
-			<Airship controller={direction} />
-			<SwipeController action={setDirection} />
+			<div className="root-game">
+				<Airship controller={direction} />
+				<SwipeController action={setDirection} />
+			</div>
 		</>
 	);
 }

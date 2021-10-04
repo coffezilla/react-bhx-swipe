@@ -18,6 +18,7 @@ const SwipeController = ({ action }: IProps) => {
 	// 	valueY: 0,
 	// 	moving: false,
 	// };
+
 	// const swipeStartCoordinates = { x: 0, y: 0 };
 	// const swipeCurrentCoordinates = { x: 0, y: 0 };
 

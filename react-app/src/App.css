@@ -39,3 +39,54 @@ pre {
 	height: 100px;
 	margin: 0px;
 }
+
+#timeline_events {
+	background-color: #c1c1c1;
+	width: 500px;
+	position: relative;
+	margin: 50px;
+	height: 10px;
+}
+
+#timeline_events ul {
+	background-color: green;
+	padding: 0;
+	margin: 0px;
+	width: 103%;
+	display: inline-flex;
+	justify-content: space-between;
+	list-style: none;
+	height: 5px;
+	transform: translateY(-20px);
+}
+
+#timeline_events ul li {
+	background-color: green;
+	background-color: green;
+	padding: 0px;
+	margin: 0px;
+	transform: rotate(293deg);
+	font-size: 0.8rem;
+	height: 15px;
+	width: 3.1%;
+}
+#timeline_events ul li::before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	position: absolute;
+	left: -15px;
+	top: 0px;
+	border-radius: 20px;
+}
+
+#timeline_events__bar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 10px;
+	background: blue;
+	width: 0px;
+}
